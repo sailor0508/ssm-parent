@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<project xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd" xmlns="http://maven.apache.org/POM/4.0.0"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <modelVersion>4.0.0</modelVersion>
+  <parent>
+    <artifactId>ssm-parent</artifactId>
+    <groupId>com</groupId>
+    <version>0.0.1-SNAPSHOT</version>
+  </parent>
+  <artifactId>ssm-web</artifactId>
+  <packaging>war</packaging>
+  <name>ssm-web Maven Webapp</name>
+  <url>http://maven.apache.org</url>
+   <dependencies>
+    <dependency>
+        <groupId>com</groupId>
+        <artifactId>ssm-model</artifactId>
+        <version>${project.version}</version>
+    </dependency>
+    <dependency>
+        <groupId>com</groupId>
+        <artifactId>ssm-service</artifactId>
+        <version>${project.version}</version>
+    </dependency>
+    <dependency>
+        <groupId>com</groupId>
+        <artifactId>ssm-common</artifactId>
+        <version>${project.version}</version>
+    </dependency>
+  </dependencies>
+  <build>
+    <finalName>ssm-web</finalName>
+  </build>
+  
+  
+</project>

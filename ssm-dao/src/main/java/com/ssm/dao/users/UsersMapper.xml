@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.apache.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ssm.dao.users.UsersDao">
+    <resultMap id="BaseResultMap" type="UsersDO">
+        <id column="id" jdbcType="INTEGER" property="id"/>
+        <result column="name" jdbcType="VARCHAR" property="name"/>
+        <result column="password" jdbcType="VARCHAR" property="password"/>
+        <result column="come_from" jdbcType="VARCHAR" property="comeFrom"/>
+        <result column="create_date" jdbcType="TIMESTAMP" property="createDate"/>
+        <result column="update_date" jdbcType="TIMESTAMP" property="updateDate"/>
+    </resultMap>
+
+
+    <insert id="save" parameterType="UsersDO" useGeneratedKeys="true" keyProperty="id">
+		insert into users  (name, password, come_from, create_date, update_date)
+	    values(#{name},#{password},#{comeFrom},NOW(),NOW())
+	</insert>
+
+    <select id="select" parameterType="java.util.Map" resultMap="BaseResultMap">
+		select * from users;
+	</select>
+
+    <insert id="update" parameterType="UsersDO">
+		update users  set
+		name = #{name},
+		password = #{password}
+		where id = #{id}
+	</insert>
+
+    <insert id="delete" parameterType="UsersDO">
+        delete users
+        where id = #{id}
+    </insert>
+
+</mapper>
